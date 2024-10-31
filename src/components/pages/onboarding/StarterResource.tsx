@@ -9,8 +9,8 @@ export default function StarterResource(props: StarterResourceProps) {
    const { setProfile, profile } = useMockStore();
 
    return (
-      <div className="flex w-full flex-col items-center px-5 pb-9">
-         <div className="age-result-card mb-3">
+      <div className="flex w-full flex-col items-center px-3 pb-5">
+         <div className="age-result-card mb-2">
             <span className="age-result-title">Your Telegram Age</span>
             <h4 className="text-shadow-age-result text-xl tracking-[0.4px]">
                <NumberTicker value={4} className="age-big text-white" />
@@ -20,7 +20,7 @@ export default function StarterResource(props: StarterResourceProps) {
             </h4>
          </div>
          <div className="age-result-card">
-            <span className="age-result-title mb-6">Free Starter Resource</span>
+            <span className="age-result-title mb-3">Free Starter Resource</span>
             <div className="flex items-center justify-center">
                {ONBOARDING_RESOURCES.map((resource) => (
                   <div
@@ -49,7 +49,7 @@ export default function StarterResource(props: StarterResourceProps) {
             </div>
          </div>
          <Button3D
-            btnClassName="mt-6"
+            btnClassName="mt-3.5"
             onClick={() => {
                const check = profile?.metadata.gold?.find(
                   (q) => q.id === 'starter-resource'

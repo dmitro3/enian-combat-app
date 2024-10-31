@@ -30,14 +30,14 @@ export default function OnboardingQuest() {
    const { profile, setProfile } = useMockStore();
 
    return (
-      <div className="age-result-card w-full rounded-3xl rounded-b-none border border-black/0 bg-black/30 pb-9 pt-8">
-         <div className="mb-7">
+      <div className="age-result-card w-full rounded-3xl rounded-b-none border border-black/0 bg-black/30 p-3">
+         <div className="mb-3">
             <span className="age-result-title">ONE TIME QUEST</span>
-            <p className="max-w-sm text-center text-[1.188rem]/normal font-normal">
+            <p className="max-w-sm text-center text-sm font-normal">
                Complete the quests below to continue playing this game
             </p>
          </div>
-         <div className="mb-6 grid w-full gap-3">
+         <div className="grid w-full gap-2">
             {ONBOARDING_QUEST.map((quest, key) => {
                const check = profile?.metadata.gold.find(
                   (q) => q.id === quest.id

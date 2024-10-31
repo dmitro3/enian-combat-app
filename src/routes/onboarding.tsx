@@ -31,9 +31,13 @@ function Onboarding() {
    return (
       <div className="flex flex-1 flex-col">
          <main className="flex-1 overflow-y-auto">
-            <section className="w-limit bg-splash relative flex flex-1 flex-col gap-4 ty:gap-5">
-               <div className="flex flex-1 items-center justify-center">
-                  <Image src="/assets/logo.png" alt="logo enian combat" />
+            <section className="w-limit bg-splash relative flex flex-1 flex-col gap-3">
+               <div className="flex items-center justify-center">
+                  <Image
+                     src="/assets/logo.png"
+                     alt="logo enian combat"
+                     className="w-3/4"
+                  />
                </div>
                <div className="flex flex-1 flex-col items-center justify-end">
                   {runInitProcess === 'init' && (
