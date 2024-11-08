@@ -31,9 +31,12 @@ const Menu = (props: Props) => {
                   {isSelected && (
                      <motion.div
                         layoutId={activeLayoutId}
-                        className={`bg-custom-blue absolute inset-0 border border-[#FFFFFF33]`}
+                        className={`absolute inset-0`}
                         style={{
                            borderRadius: 9999,
+                           boxShadow: '-1px -1px 0px 2px #FFFFFF40 inset, 0px 0px 0px 2px #29BFDA33, 0px 2px 8px 0px #00000066',
+                           border: '1px solid #FFFFFF33',
+                           background: 'linear-gradient(0deg,#14B9D6,#14B9D6),linear-gradient(180deg,rgba(255,255,255,0.3)7.29%,rgba(255,255,255,0)65.62%)',
                         }}
                         transition={{ type: 'spring', duration: 0.6 }}
                      />
