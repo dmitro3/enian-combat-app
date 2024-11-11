@@ -35,7 +35,7 @@ export default function ProfilBadge() {
             <ResourceCard
                size={50}
                item={{
-                  img: '/assets/original/resource/gold.svg',
+                  img: '/assets/original/resource/gold.png',
                   name: 'gold',
                }}
                className="h-[3.2rem] gap-4"
