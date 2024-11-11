@@ -53,7 +53,7 @@ export const ONBOARDING_RESOURCES: {
 }[] = [
    {
       name: 'gold',
-      img: '/assets/original/resource/gold.svg',
+      img: '/assets/original/resource/gold.png',
       total: '120000',
    },
    // {
