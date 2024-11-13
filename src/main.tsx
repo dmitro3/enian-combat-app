@@ -25,6 +25,8 @@ WebApp.ready();
 WebApp.expand();
 WebApp.isClosingConfirmationEnabled;
 
+console.log('profile', WebApp.initDataUnsafe);
+
 const rootElement = document.getElementById('app')!;
 
 if (!rootElement.innerHTML) {
