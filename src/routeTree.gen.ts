@@ -15,6 +15,7 @@ import { Route as SkillImport } from './routes/skill'
 import { Route as QuestImport } from './routes/quest'
 import { Route as OnboardingImport } from './routes/onboarding'
 import { Route as MarketImport } from './routes/market'
+import { Route as MainImport } from './routes/main'
 import { Route as InventoryImport } from './routes/inventory'
 import { Route as IndexImport } from './routes/index'
 
@@ -37,6 +38,11 @@ const OnboardingRoute = OnboardingImport.update({
 
 const MarketRoute = MarketImport.update({
   path: '/market',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MainRoute = MainImport.update({
+  path: '/main',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -66,6 +72,13 @@ declare module '@tanstack/react-router' {
       path: '/inventory'
       fullPath: '/inventory'
       preLoaderRoute: typeof InventoryImport
+      parentRoute: typeof rootRoute
+    }
+    '/main': {
+      id: '/main'
+      path: '/main'
+      fullPath: '/main'
+      preLoaderRoute: typeof MainImport
       parentRoute: typeof rootRoute
     }
     '/market': {
@@ -104,6 +117,7 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/inventory': typeof InventoryRoute
+  '/main': typeof MainRoute
   '/market': typeof MarketRoute
   '/onboarding': typeof OnboardingRoute
   '/quest': typeof QuestRoute
@@ -113,6 +127,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/inventory': typeof InventoryRoute
+  '/main': typeof MainRoute
   '/market': typeof MarketRoute
   '/onboarding': typeof OnboardingRoute
   '/quest': typeof QuestRoute
@@ -123,6 +138,7 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/inventory': typeof InventoryRoute
+  '/main': typeof MainRoute
   '/market': typeof MarketRoute
   '/onboarding': typeof OnboardingRoute
   '/quest': typeof QuestRoute
@@ -134,16 +150,25 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/inventory'
+    | '/main'
     | '/market'
     | '/onboarding'
     | '/quest'
     | '/skill'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/inventory' | '/market' | '/onboarding' | '/quest' | '/skill'
+  to:
+    | '/'
+    | '/inventory'
+    | '/main'
+    | '/market'
+    | '/onboarding'
+    | '/quest'
+    | '/skill'
   id:
     | '__root__'
     | '/'
     | '/inventory'
+    | '/main'
     | '/market'
     | '/onboarding'
     | '/quest'
@@ -154,6 +179,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   InventoryRoute: typeof InventoryRoute
+  MainRoute: typeof MainRoute
   MarketRoute: typeof MarketRoute
   OnboardingRoute: typeof OnboardingRoute
   QuestRoute: typeof QuestRoute
@@ -163,6 +189,7 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   InventoryRoute: InventoryRoute,
+  MainRoute: MainRoute,
   MarketRoute: MarketRoute,
   OnboardingRoute: OnboardingRoute,
   QuestRoute: QuestRoute,
@@ -183,6 +210,7 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/inventory",
+        "/main",
         "/market",
         "/onboarding",
         "/quest",
@@ -194,6 +222,9 @@ export const routeTree = rootRoute
     },
     "/inventory": {
       "filePath": "inventory.tsx"
+    },
+    "/main": {
+      "filePath": "main.tsx"
     },
     "/market": {
       "filePath": "market.tsx"

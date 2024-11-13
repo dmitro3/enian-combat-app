@@ -27,7 +27,7 @@ const AnimatedCounter: React.FC<CounterProps> = ({
 
          if (progress < 1) {
             requestAnimationFrame(step);
-         } else if (onEnd && end > 0) {
+         } else if (onEnd && currentCount === 100) {
             await sleep(300);
             onEnd(); // Call the optional onEnd function when the counter reaches the end
          }
