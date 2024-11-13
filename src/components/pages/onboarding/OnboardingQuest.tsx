@@ -72,14 +72,10 @@ export default function OnboardingQuest() {
 
                setProfile({
                   ...profile!,
-                  todo: 'play',
                });
 
                router({
-                  to: '/',
-                  search: {
-                     todo: 'play',
-                  },
+                  to: '/main',
                });
             }}
          >

@@ -56,7 +56,6 @@ export default function StarterResource(props: StarterResourceProps) {
                );
                if (!check) {
                   setProfile({
-                     todo: 'onboarding',
                      metadata: {
                         gold: [
                            {
