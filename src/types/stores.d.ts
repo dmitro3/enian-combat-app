@@ -5,7 +5,6 @@ export type Gold = {
 };
 
 export type ProfileTypes = {
-   todo: 'play' | 'onboarding';
    metadata: {
       gold: Gold[];
    };

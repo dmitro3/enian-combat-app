@@ -41,10 +41,7 @@ if (!rootElement.innerHTML) {
 
    try {
       // Configure all application dependencies.
-      init(
-         retrieveLaunchParams().startParam === 'debug' ||
-            import.meta.env.VITE_DEV
-      );
+      init(retrieveLaunchParams().startParam === 'debug' || import.meta.env.DEV);
 
       root.render(
          <RootProvider>
