@@ -12,6 +12,7 @@ import { init } from './init';
 import { retrieveLaunchParams } from '@telegram-apps/sdk-react';
 import { EnvUnsupported } from './components/EnvUnsupported';
 import { RootProvider } from './providers/RootProvider';
+// import WebApp from '@twa-dev/sdk';
 
 // Set up a Router instance
 const router = createRouter({
@@ -25,6 +26,13 @@ declare module '@tanstack/react-router' {
       router: typeof router;
    }
 }
+
+// load TELEGRAM MINI APP
+// WebApp.ready();
+// WebApp.expand();
+// WebApp.isClosingConfirmationEnabled;
+
+// console.log('profile', WebApp.initDataUnsafe);
 
 const rootElement = document.getElementById('app')!;
 
