@@ -23,7 +23,11 @@ interface MockState {
 export const useMockStore = create<MockState>()(
    persist(
       (set) => ({
-         profile: null,
+         profile: {
+            metadata: {
+               gold: [],
+            },
+         },
          setProfile: (profile) => set({ profile }),
          resource: DEFAULT_RESOURCE,
          setResource: (resource) => set({ resource }),
